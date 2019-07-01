@@ -1,0 +1,3 @@
+[submodule "pika_client"]
+	path = pika_client
+	url = git@github.com:jayakrishnandingit/pika_client.git
