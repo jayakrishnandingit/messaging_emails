@@ -8,3 +8,6 @@ Create an email service that listens to a queue in RabbitMQ and sends an email u
 # Packages
 * Python3.7
 * pika.
+
+# Environment variables
+* AMQP_URL.
