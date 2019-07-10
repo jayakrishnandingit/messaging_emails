@@ -24,7 +24,14 @@ class EmailConsumer(BasePubSubConsumer):
             exchange='notifications_x',
             exchange_type='topic',
             routing_key='notifications.email'):
-        super().__init__(self, connector, app_id, queue, durable, exchange, exchange_type, routing_key)
+        super().__init__(
+            connector,
+            app_id=app_id,
+            queue=queue,
+            durable=durable,
+            exchange=exchange,
+            exchange_type=exchange_type,
+            routing_key=routing_key)
         self.service = service
 
     def send_email(self, body):
@@ -38,7 +45,7 @@ class DummyMailService(object):
     def send(self, recepients, body, from_email=FROM_EMAIL):
         LOGGER.info("Mocking email.")
         LOGGER.info("Recepients %s.", recepients)
-        LOGGER.info("Content is %s.", content)
+        LOGGER.info("Content is %s.", body)
         LOGGER.info("From address %s.", from_email)
 
 
